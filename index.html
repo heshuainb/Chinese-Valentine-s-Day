@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Chinese Valentine's Day</title>
+
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+
+<div id="mainDiv">
+	<div id="content">
+		<div style="font-size: 24px;">TO 雪纯同学</div>
+		<div id="code">
+        	七夕快乐呀！<br /><br />
+
+            见不到你的日子里<br />
+            每天都很想你<br />
+            <span class="keyword">最开心的事情是每天和你打电话</span><br /><br />
+
+            和你相处<br />
+            我一直都很开心<br />
+			来日方长<br />
+             <span class="keyword">希望有更多机会好好认识你</span><br /><br />
+
+
+			你需要我的时候</span><br />
+			我会在你身边<br />
+			如果暂时没有<br />
+            <span class="keyword">那我一定是在赶去找你的路上</span><br /><br />
+
+   			<span class="keyword">还有好多好多话想跟你说</span><br />
+			最重要的两句是<br />
+			<span class="keyword"> 希望你开开心心 </span><br />
+			还有<br />
+            <span class="keyword"> 一直在我身边 </span><br />
+            -- 小何<br />
+
+
+		</div>
+
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					相遇，相识
+					<div id="elapseClock"></div>
+				</div>
+<!--			<div id="loveu">
+					<br/>
+					<div class="signature">- 小何</div>
+				</div>
+-->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date('2024-5-21');
+
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+<p>Made for 小雪宝, made by 小何</p>
+<p>Copyright © 2024. All Rights Reserved. </p>
+</div>
+
+<!-- 音乐播放器，设置autoplay属性尝试自动播放 -->  
+<audio id="bgMusic" src="just the way you are.mp3" autoplay loop></audio>  
+  
+<script type="text/javascript">  
+var offsetX = $("#loveHeart").width() / 2;  
+var offsetY = $("#loveHeart").height() / 2 - 55;  
+var together = new Date('2024-5-21');  
+  
+// 检查浏览器是否支持canvas  
+if (!document.createElement('canvas').getContext) {  
+    // 不支持canvas时的处理  
+} else {  
+    // 支持canvas时的处理  
+    // ...（你的原有代码）  
+}  
+  
+// 处理音乐播放  
+document.getElementById('bgMusic').addEventListener('canplaythrough', function() {  
+    // 当音乐可以播放到末尾时，尝试播放  
+    this.play();  
+});  
+  
+// 如果自动播放失败，点击页面任意位置播放音乐  
+document.body.addEventListener('click', function() {  
+    var music = document.getElementById('bgMusic');  
+    if (music.paused) {  
+        music.play();  
+    }  
+});  
+</script>  
+  
+<!-- 你的版权信息 -->  
+ 
+</body>
+</html>
